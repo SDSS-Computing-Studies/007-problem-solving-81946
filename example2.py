@@ -36,3 +36,5 @@ your screen
 import pyautogui as p 
 
 p.mouseInfo()
+
+
