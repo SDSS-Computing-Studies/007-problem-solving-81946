@@ -47,3 +47,9 @@ def main():
     print("Current epoch time is " + str(curTime))
 
 main()
+
+
+
+
+import py -m pip install pyautogui
+
