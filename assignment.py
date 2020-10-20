@@ -2,14 +2,14 @@
 
 import pyautogui as p 
 import time as t
-#p.mouseInfo()
+p.mouseInfo()
 
 #1-Set up auto clicker in one spot to click.
 #2-Set up timer.
 #3- After ever so often, determine blue boxes.
 #4- Click all avaliable boxes.
 #5- return to clicking.
-
+#Game- https://particle-clicker.web.cern.ch/
 
 
 point= True
@@ -29,8 +29,8 @@ while point:
 
 
 
-    times.append(curTime + 5)
-    events.append('5 seconds')
+    times.append(curTime + 10)
+    events.append('10 seconds')
 
 
 
@@ -47,8 +47,23 @@ while point:
             times.pop(index)
             events.pop(index)
             point= False
-
             
+            blue()?????
+
+
+
+
+
+
+
+
+def blue():
+    locateOnScreen(p.getpixel(40,96,144))
+    
+    
+    
+    
+
 
 
 
