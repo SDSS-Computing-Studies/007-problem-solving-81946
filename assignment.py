@@ -19,23 +19,25 @@ import time as t
 #(1906,1001) bottom
 #(1911,218) Top
 
+#---------------------------------------------
 def Research():
     finger=True
     times=[]
     events= []
-
+    
     print("========================")
     print("Now buying from Research")
     print("========================")
 
     p.click(1490,181)
-    p.click((1911,218)) #UP
+    p.click(1906,1001) #Down
+
     while finger:
         Data= p.locateCenterOnScreen('Gears.png')
         p.click(Data)
         print(".", end="")
         curTime = t.time()
-        times.append(curTime + 5)
+        times.append(curTime + 2)
         events.append('Part1 : Success')
         numEvents = len(events)
         index = 0
@@ -45,14 +47,41 @@ def Research():
                     print(events[index])
                     times.pop(index)
                     events.pop(index)
+                    finger=False
+                    Research2()
+
+def Research2():
+    finger5=True
+    times=[]
+    events= []
+
+    p.click(1911,218) #UP
+
+    while finger5:
+        Data= p.locateCenterOnScreen('Gears.png')
+        p.click(Data)
+        print(".", end="")
+        curTime = t.time()
+        times.append(curTime + 2)
+        events.append('Part2 : Success')
+        numEvents = len(events)
+        index = 0
+        curTime = t.time()
+        for i in times:
+                if curTime > i:
+                    print(events[index])
+                    times.pop(index)
+                    events.pop(index)
+                    finger5=False
                     Upgrades()
 
+#p.click((1911,218)) #UP
 
+    #if p.locateCenterOnScreen('Dead Gears.png'):
+        #Upgrades()
+        #finger5=False
 
-#p.click(1906,1001) #Down
-
-
-
+#--------------------------------------
 def Upgrades():
     finger3=True
     times=[]
@@ -63,28 +92,19 @@ def Upgrades():
     print("========================")
 
     p.click(1666,166)
+    p.click(1906,1001) #down
+
     while finger3:
         Upgrades= p.locateCenterOnScreen('Money.png')
         p.click(Upgrades)
         print(".", end="")
-
-
         curTime = t.time()
-
-
-
-        times.append(curTime + 15)
-        events.append('Success')
-
-
-
+        times.append(curTime + 2)
+        events.append('Part1 : Success')
         numEvents = len(events)
         index = 0
-
         curTime = t.time()
-
         for i in times:
-        
             if curTime > i:
                 print(events[index])
             
@@ -92,9 +112,36 @@ def Upgrades():
                 events.pop(index)
                 finger3=False
 
-                JTN()
+                Upgrades2()
 
-    
+def Upgrades2():
+    finger6=True
+    times=[]
+    events= []
+
+
+    p.click(1911,218) #Up
+    while finger6:
+        Upgrades= p.locateCenterOnScreen('Money.png')
+        p.click(Upgrades)
+        print(".", end="")
+        curTime = t.time()
+        times.append(curTime + 2)
+        events.append('Part2 : Success')
+        numEvents = len(events)
+        index = 0
+        curTime = t.time()
+        for i in times:
+            if curTime > i:
+                print(events[index])
+            
+                times.pop(index)
+                events.pop(index)
+                finger6=False
+
+                JTN()
+#-----------------------------------------------
+
 def JTN():
     finger2=True
     times=[]
@@ -105,38 +152,53 @@ def JTN():
 
 
     p.click(1590,170)
+    p.click(1906,1001) #Down
     while finger2:
         JTN= p.locateCenterOnScreen('Person icon.png')
         p.click(JTN)
         print(".", end="")
-
-
         curTime = t.time()
-
-
-
-        times.append(curTime + 15)
-        events.append('Success')
-
-
-
+        times.append(curTime + 2)
+        events.append('Part1 : Success')
         numEvents = len(events)
         index = 0
-
         curTime = t.time()
-
         for i in times:
-        
             if curTime > i:
                 print(events[index])
             
                 times.pop(index)
                 events.pop(index)
                 finger2= False
-                click()
+                JTN2()
     
     
+def JTN2():
+    finger8=True
+    times=[]
+    events= []
 
+    p.click(1911,218) #Up
+    while finger8:
+        JTN= p.locateCenterOnScreen('Person icon.png')
+        p.click(JTN)
+        print(".", end="")
+        curTime = t.time()
+        times.append(curTime + 2)
+        events.append('Part2 : Success')
+        numEvents = len(events)
+        index = 0
+        curTime = t.time()
+        for i in times:
+            if curTime > i:
+                print(events[index])
+            
+                times.pop(index)
+                events.pop(index)
+                finger8= False
+                click()
+
+#-------------------------------------------
 
 def click():
     print("=================")
@@ -149,24 +211,13 @@ def click():
     while point:
         p.click(1200,387)
         print(".", end="")
-
-
         curTime = t.time()
-
-
-
         times.append(curTime + 15)
         events.append('15 seconds')
-
-
-
         numEvents = len(events)
         index = 0
-
         curTime = t.time()
-
         for i in times:
-        
             if curTime > i:
                 print(events[index])
             
@@ -182,16 +233,3 @@ def click():
 
 
 click()
-
-
-
-
-
-    
-
-
-
-
-
-
-      
